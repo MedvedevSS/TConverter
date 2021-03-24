@@ -1,24 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TConverter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="day" translatesAutoresizingMaskIntoConstraints="NO" id="8gO-42-5oO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T-Converter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yto-qI-pO1">
+                                <rect key="frame" x="86" y="96" width="242" height="45"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dAj-xv-JZ8">
+                                <rect key="frame" x="62.5" y="433" width="289" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="285" id="40A-VE-Pwe"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="40A-VE-Pwe"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="40A-VE-Pwe"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="SGn-rU-bMu"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32ºF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ql2-rn-HFz">
+                                <rect key="frame" x="171" y="483" width="72" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0ºC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJA-QE-C48">
+                                <rect key="frame" x="178" y="371" width="58" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ql2-rn-HFz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="58w-UT-c8t"/>
+                            <constraint firstItem="dAj-xv-JZ8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5TL-eB-FuV"/>
+                            <constraint firstItem="dAj-xv-JZ8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7Ir-wF-oaF"/>
+                            <constraint firstItem="Yto-qI-pO1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="52" id="9l4-gw-wF6"/>
+                            <constraint firstItem="Ql2-rn-HFz" firstAttribute="top" secondItem="dAj-xv-JZ8" secondAttribute="bottom" constant="45" id="DB3-ie-OoR">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="Yto-qI-pO1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="PcK-Wl-umL"/>
+                            <constraint firstItem="8gO-42-5oO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YFf-Te-E3g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="8gO-42-5oO" secondAttribute="top" constant="44" id="akO-Fn-KPn"/>
+                            <constraint firstItem="dAj-xv-JZ8" firstAttribute="top" secondItem="sJA-QE-C48" secondAttribute="bottom" constant="51" id="j4P-bI-bud">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="8gO-42-5oO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="jhT-jf-5Va"/>
+                            <constraint firstItem="sJA-QE-C48" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="p5H-SP-fNr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8gO-42-5oO" secondAttribute="trailing" id="z48-ER-Y1k"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="YFf-Te-E3g"/>
+                                <exclude reference="jhT-jf-5Va"/>
+                                <exclude reference="akO-Fn-KPn"/>
+                                <exclude reference="z48-ER-Y1k"/>
+                                <exclude reference="9l4-gw-wF6"/>
+                                <exclude reference="PcK-Wl-umL"/>
+                                <exclude reference="p5H-SP-fNr"/>
+                                <exclude reference="5TL-eB-FuV"/>
+                                <exclude reference="7Ir-wF-oaF"/>
+                                <exclude reference="j4P-bI-bud"/>
+                                <exclude reference="58w-UT-c8t"/>
+                                <exclude reference="DB3-ie-OoR"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="YFf-Te-E3g"/>
+                                <include reference="jhT-jf-5Va"/>
+                                <include reference="akO-Fn-KPn"/>
+                                <include reference="z48-ER-Y1k"/>
+                                <include reference="9l4-gw-wF6"/>
+                                <include reference="PcK-Wl-umL"/>
+                                <include reference="p5H-SP-fNr"/>
+                                <include reference="5TL-eB-FuV"/>
+                                <include reference="7Ir-wF-oaF"/>
+                                <include reference="j4P-bI-bud"/>
+                                <include reference="58w-UT-c8t"/>
+                                <include reference="DB3-ie-OoR"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="cenliusLabel" destination="sJA-QE-C48" id="G84-3K-QQZ"/>
+                        <outlet property="fahrenheitLabel" destination="Ql2-rn-HFz" id="1QU-qj-wxb"/>
+                        <outlet property="slider" destination="dAj-xv-JZ8" id="ril-D0-5Kp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="73.660714285714278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="day" width="375" height="667"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
